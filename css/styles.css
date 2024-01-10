@@ -1,15 +1,23 @@
+:root {
+    --main-bg: #266669;
+    --secondary-bg: #fff;
+    --primary-color: #266669;
+    --secondary-color: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Roboto;
+    scroll-behavior: smooth;
 }
 
 /********************
 * Start: Default Styles
 ********************/
 body {
-    /* background: #ddcdb3; */
+    /* background: var(--main-color); */
 }
 
 .btn {
@@ -18,6 +26,12 @@ body {
     outline: none;
     cursor: pointer;
     transition: 0.3s;
+}
+
+input {
+    border: 0;
+    background: transparent;
+    outline: none;
 }
 
 a {
@@ -47,10 +61,10 @@ li {
 .title {
     font-size: 2.5rem;
     display: block;
-    color: #ddcdb3;
+    color: var(--primary-color);
     padding-bottom: 10px;
     text-transform: uppercase;
-    border-bottom: 4px solid #ddcdb3;
+    border-bottom: 4px solid var(--main-bg);
     margin-bottom: 30px;
     width: fit-content;
 }
@@ -68,9 +82,9 @@ li {
     border-radius: 8px;
     font-size: 18px;
     text-transform: uppercase;
-    background: #ddcdb3;
+    background: var(--main-bg);
     font-weight: bold;
-    color: #444;
+    color: var(--secondary-color);
 }
 
 /********************
@@ -85,15 +99,20 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgb(240, 228, 209, 0.9);
+    background: var(--main-bg);
     min-height: 60px;
 }
 
+.section-header .logo {
+    max-width: 130px;
+    color: #fff;
+}
 
 .section-header .navigation a {
     position: relative;
     font-weight: 600;
     margin: 0 15px;
+    color: var(--secondary-color);
 }
 
 .section-header .navigation a::after {
@@ -102,7 +121,7 @@ li {
     position: absolute;
     width: 0;
     height: 2px;
-    background: #000;
+    background: var(--secondary-bg);
     left: 0;
     bottom: -6px;
     transition: 0.25s;
@@ -114,6 +133,12 @@ li {
 
 .section-header .btn-mobile-menu {
     display: none;
+}
+
+.section-header .contacts {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 /********************
@@ -146,9 +171,17 @@ li {
     text-transform: uppercase;
 }
 
+.section-main p {
+    font-size: 22px;
+    color: #fff;
+}
+
+
 .section-main .btn-default {
     margin-top: 30px;
 }
+
+
 
 /********************
 * End: Section Main
@@ -163,6 +196,7 @@ li {
     margin-top: 60px;
     padding-top: 30px;
     padding-bottom: 30px;
+    align-items: center;
 }
 
 .section-about .text-wrapper {
@@ -174,6 +208,32 @@ li {
     flex: 1 50%;
     clip-path: polygon(0% 10%, 0% 10%, 100% 0%, 100% 0%, 100% 100%, 100% 100%, 0% 90%, 0% 100%);
 }
+
+.section-about ul li {
+    margin-top: 15px;
+    position: relative;
+    margin-left: 15px;
+    padding-left: 15px;
+}
+
+.section-about ul li::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: var(--main-bg);
+    position: absolute;
+    left: -15px;
+    top: calc(10px);
+}
+
+
+.section-about ul li b {
+    display: block;
+    font-size: 20px;
+}
+
 
 /********************
 * End: Section About
@@ -214,21 +274,23 @@ li {
 }
 
 .section-benefits .card-wrapper {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
 }
 
 .section-benefits .card-wrapper .card {
-    max-width: 280px;
-    margin-top: 40px;
+    max-width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-benefits .card-wrapper .img-wrapper {
     width: 90px;
     height: 90px;
     border-radius: 100%;
-    border: 2px solid #ddcdb3;
+    /* border: 2px solid var(--main-bg); */
     margin-left: auto;
     margin-right: auto;
 }
@@ -246,6 +308,99 @@ li {
 
 /********************
 * End: Section Benefits
+********************/
+
+/********************
+* Start: Section Roadmap
+********************/
+
+.section-roadmap {
+    background: #f5f5f5;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.section-roadmap .title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.roadmap-wrapper {
+    margin: 60px auto;
+    max-width: 716px;
+    position: relative;
+}
+
+.roadmap-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 2px);
+
+    display: block;
+    height: 95%;
+    width: 4px;
+    background: var(--main-bg);
+}
+
+.roadmap-wrapper .item {
+    max-width: 360px;
+    text-align: right;
+    padding-right: 50px;
+    position: relative;
+    margin-bottom: 70px;
+    cursor: pointer;
+}
+
+.roadmap-wrapper .item:last-child {
+    margin-bottom: 0;
+}
+
+.roadmap-wrapper .item b {
+    margin-bottom: 5px;
+    display: block;
+    font-size: 20px;
+}
+
+.roadmap-wrapper .item p {
+    color: #5e5e5e;
+}
+
+.roadmap-wrapper .item::after {
+    content: attr(data-count);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: -18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: var(--main-bg);
+    font-size: 20px;
+    color: var(--secondary-color);
+    border-radius: 100%;
+    transition: 0.25s;
+}
+
+.roadmap-wrapper .item:hover::after {
+    box-shadow: 0px 0px 10px var(--main-bg);
+}
+
+.roadmap-wrapper .item:nth-child(odd) {
+    margin-left: auto;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.roadmap-wrapper .item:nth-child(odd)::after {
+    left: -18px;
+}
+
+/********************
+* End: Section Roadmap
 ********************/
 
 /********************
@@ -272,7 +427,7 @@ li {
 
 .section-gallery .card-wrapper .card:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 3px #ddcdb3;
+    box-shadow: 0px 0px 3px var(--main-bg);
 }
 
 /********************
@@ -280,14 +435,81 @@ li {
 ********************/
 
 /********************
-* Start: Section Form
+* Start: Section Reviews
 ********************/
 
-.section-forms .form-wrapepr {
+.section-reviews {
+    padding-bottom: 60px;
+}
+
+/********************
+* End: Section Reviews
+********************/
+
+/********************
+* Start: Section Form
+********************/
+.section-forms {
+    background: #f5f5f5;
+}
+
+.section-forms .container {
     display: flex;
-    align-items: flex-end;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-forms .title {
+    border: 0;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.section-forms .description {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #5e5e5e;
+    font-weight: bold;
+}
+
+.section-forms .btn-default {
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 0;
+    margin-top: 15px;
+}
+
+.section-forms .form-wrapepr {
+    flex: 1 100%;
+    display: flex;
     justify-content: center;
-    gap: 60px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-wrapepr form {
+    max-width: 400px;
+    width: 100%;
+}
+
+.form-wrapepr .input-wrapper {
+    margin-bottom: 15px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    font-size: 18px;
+    padding: 0.5rem;
+    border: 2px solid var(--main-bg);
+}
+
+.section-forms .content-wrapper {
+    flex: 1 100%;
+}
+
+.section-forms .social-media {
+    margin-top: 50px;
+    font-size: 18px;
 }
 
 /********************
