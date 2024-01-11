@@ -35,9 +35,10 @@ input {
 }
 
 a {
-    display: inline-block;
-    text-decoration: none;
-    color: #333;
+    /* display: inline-block; */
+    /* text-decoration: none; */
+    /* color: #333; */
+    color: inherit;
 }
 
 .btn:hover {
@@ -179,6 +180,7 @@ li {
 
 .section-main .btn-default {
     margin-top: 30px;
+    text-align: center;
 }
 
 
@@ -345,10 +347,11 @@ li {
 
 .roadmap-wrapper .item {
     max-width: 360px;
+    height: 120px;
     text-align: right;
     padding-right: 50px;
     position: relative;
-    margin-bottom: 70px;
+    /* margin-bottom: 70px; */
     cursor: pointer;
 }
 
