@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Roboto;
+    font-family: Futura;
     scroll-behavior: smooth;
 }
 
@@ -159,6 +159,21 @@ li {
     flex-direction: column;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo .img-wrapper {
+    min-width: 28px;
+}
+
+.logo h2 {
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
 .section-main h1 {
     text-transform: uppercase;
     font-size: 6rem;
@@ -166,6 +181,7 @@ li {
 }
 
 .section-main h2 {
+    font-weight: normal;
     font-size: 4.5rem;
     color: #fff;
     text-transform: uppercase;
@@ -173,6 +189,7 @@ li {
 
 .section-main p {
     font-size: 22px;
+    text-transform: uppercase;
     color: #fff;
 }
 
@@ -204,6 +221,13 @@ li {
     padding: 0 30px;
     flex: 1 50%;
 }
+
+.section-about .text-wrapper p {
+    margin-top: 16px;
+    color: #5e5e5e;
+}
+
+
 
 .section-about .img-wrapper {
     flex: 1 50%;
@@ -339,7 +363,7 @@ li {
     left: calc(50% - 2px);
 
     display: block;
-    height: 95%;
+    height: 85%;
     width: 4px;
     background: var(--main-bg);
 }
@@ -444,6 +468,11 @@ li {
     padding-bottom: 60px;
 }
 
+.section-reviews iframe {
+    margin: 30px auto;
+    display: block;
+}
+
 /********************
 * End: Section Reviews
 ********************/
@@ -457,6 +486,8 @@ li {
 
 .section-forms .container {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     padding-top: 60px;
     padding-bottom: 60px;
 }
@@ -481,16 +512,9 @@ li {
     margin-top: 15px;
 }
 
-.section-forms .form-wrapepr {
-    flex: 1 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 .form-wrapepr form {
-    max-width: 400px;
+    margin-top: 30px;
+    max-width: 509px;
     width: 100%;
 }
 
@@ -505,15 +529,39 @@ li {
     border: 2px solid var(--main-bg);
 }
 
-.section-forms .content-wrapper {
-    flex: 1 100%;
-}
-
 .section-forms .social-media {
     margin-top: 50px;
     font-size: 18px;
 }
 
+.section-forms .img-wrapper {
+    max-width: 300px;
+}
+
 /********************
 * End: Section Form
 ********************/
+
+/* Start: Dropdown Text */
+
+.dropdown-text {}
+
+.dropdown-text .hidden-content {
+    height: 0px;
+    overflow: hidden;
+    transition: 0.30s;
+}
+
+.dropdown-text.active .hidden-content {
+    height: 400px;
+}
+
+.dropdown-text .btn-default {
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 0;
+    font-weight: normal;
+    padding: 12px 30px;
+}
+
+/* End: Dropdown Text */
