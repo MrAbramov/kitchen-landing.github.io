@@ -70,11 +70,24 @@ li {
 }
 
 .bg-wrapper {
-    background: url(../img/bg-main.jpg) top no-repeat;
-    background-size: cover;
+    background: url(../img/bg_100.jpg) center no-repeat;
+    background-size: contain;
+    background-size: 70% 100%;
+    position: relative;
+    overflow: hidden;
 
     clip-path: polygon(0% 90%, 0% 0%, 100% 0%, 100% 90%, 50% 100%);
     padding-bottom: 70px;
+}
+
+.bg-wrapper .bg-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .btn-default {
@@ -108,6 +121,13 @@ li {
     color: #fff;
 }
 
+.section-header .mobile-menu-body {
+    display: flex;
+    align-items: center;
+    width: 65%;
+    justify-content: space-between;
+}
+
 .section-header .navigation a {
     position: relative;
     font-weight: 600;
@@ -133,7 +153,20 @@ li {
 
 .section-header .btn-mobile-menu {
     display: none;
+    width: 24px;
+    height: 24px;
+    background: url(../img/icons/menu.svg) no-repeat;
+    background-size: cover;
 }
+
+.section-header.active .btn-mobile-menu {
+    background: url(../img/icons/close.svg) no-repeat;
+    background-size: cover;
+}
+
+
+
+
 
 .section-header .contacts {
     display: flex;
@@ -178,6 +211,7 @@ li {
     text-transform: uppercase;
     font-size: 6rem;
     color: #fff;
+    text-align: center;
 }
 
 .section-main h2 {
@@ -471,6 +505,8 @@ li {
 .section-reviews iframe {
     margin: 30px auto;
     display: block;
+    max-width: 500px;
+    width: 100%;
 }
 
 /********************
@@ -566,3 +602,116 @@ li {
 }
 
 /* End: Dropdown Text */
+
+
+@media screen and (max-width: 1300px) {
+    .section-main h1 {
+        font-size: 4rem;
+    }
+
+    .section-main h2 {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .section-main .container {
+        min-height: 75vh;
+    }
+
+    .section-header {
+        position: relative;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+    }
+
+    .section-header .btn-mobile-menu {
+        display: block;
+    }
+
+
+    .section-header .mobile-menu-body {
+        position: absolute;
+        left: 0%;
+        top: -100vh;
+        background: #266669;
+        width: 100%;
+        height: calc(100vh - 60px);
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10%;
+        transition: 0.3s;
+    }
+
+    .section-header .navigation {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .section-header.active .mobile-menu-body {
+        top: 59px;
+    }
+
+
+    .section-header .contacts a,
+    .section-header .mobile-menu a {
+        font-size: 2rem;
+    }
+
+
+    .section-main h1 {
+        font-size: 3rem;
+    }
+
+    .section-main h2 {
+        font-size: 2.5rem;
+    }
+
+    .section-about .container {
+        flex-direction: column;
+    }
+
+    .section-benefits .card-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .roadmap-wrapper {
+        max-width: max-content;
+    }
+
+    .roadmap-wrapper::after {
+        left: 0;
+    }
+
+    .roadmap-wrapper .item {
+        text-align: left;
+        padding-right: 0;
+        padding-left: 50px;
+    }
+
+    .roadmap-wrapper .item::after {
+        right: calc(100% - 20px);
+    }
+
+    .roadmap-wrapper .item:nth-child(odd) {
+        margin-left: 0;
+    }
+
+    .section-forms .container {
+        flex-direction: column;
+    }
+
+    .section-forms .container .img-wrapper {
+        display: none;
+    }
+}
