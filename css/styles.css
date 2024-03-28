@@ -715,3 +715,27 @@ li {
         display: none;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 15px;
+    }
+
+    .bg-wrapper {
+        background-size: 100% 100%;
+    }
+
+    .section-main h2,
+    .section-main h1 {
+        font-size: 2rem;
+    }
+
+    .section-main p {
+        font-size: 16px;
+    }
+
+    .dropdown-text.active .hidden-content {
+        height: 610px;
+    }
+
+}
