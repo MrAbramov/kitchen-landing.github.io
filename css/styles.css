@@ -739,3 +739,91 @@ li {
     }
 
 }
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 15px;
+    }
+
+    .bg-wrapper {
+        background-size: 100% 100%;
+    }
+
+    .section-main .container {
+        padding: 0;
+    }
+
+    .section-main h2,
+    .section-main h1 {
+        font-size: 2rem;
+    }
+
+    .section-main p {
+        font-size: 16px;
+    }
+
+    .btn-default {
+        font-size: 14px;
+    }
+
+    .dropdown-text.active .hidden-content {
+        height: max-content;
+    }
+
+    .roadmap-wrapper {
+        margin-left: 20px;
+    }
+
+    .section-about .text-wrapper {
+        padding: 0;
+    }
+
+    .section-benefits {
+        clip-path: none;
+        padding: 30px;
+    }
+
+    .section-forms .title {
+        font-size: 1.5rem;
+    }
+
+    .section-forms .description {
+        font-size: 1rem;
+    }
+
+}
+
+
+@media screen and (max-width: 424px) {
+    .title {
+        font-size: 1rem;
+    }
+
+    .section-main h2,
+    .section-main h1 {
+        font-size: 1.7rem;
+    }
+
+
+
+    .section-main p {
+        font-size: 14px;
+    }
+
+    .section-benefits {
+        padding: 0;
+    }
+
+    .section-benefits .card-wrapper {
+        gap: 15px;
+    }
+
+    .section-benefits .card-wrapper .card-title {
+        font-size: 16px;
+    }
+
+    .section-benefits .card-wrapper p {
+        font-size: 14px;
+    }
+
+}
